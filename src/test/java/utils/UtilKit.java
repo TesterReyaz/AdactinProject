@@ -42,13 +42,13 @@ public class UtilKit extends BasePage{
 		
 		ArrayList<Row> testCaseRows=new ArrayList<Row>();
 		
-		testCaseRows = findRows(ws,"Book");	
+		testCaseRows = findRows(ws,testcase);	
 		
 		System.out.println(testCaseRows.size());
 		
 		System.out.println(testCaseRows.get(1).getLastCellNum());
 		
-		Object[][] obj=new Object[testCaseRows.size()-1][testCaseRows.get(0).getLastCellNum()];
+		Object[][] obj=new Object[testCaseRows.size()-1][testCaseRows.get(0).getLastCellNum()-1];
 		
 		for(int i=0;i<testCaseRows.size()-1;i++)
 		{

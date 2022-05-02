@@ -22,6 +22,9 @@ public class LoginPage {
 	@FindBy(xpath="//input[@name='login']")
 	WebElement login;
 	
+	@FindBy(xpath="//title")
+	WebElement title;
+	
 	
 	public void username(String usernameText)
 	{
@@ -38,6 +41,11 @@ public class LoginPage {
 		
 		login.click();
 	}
+	
+	public String getTitle()
+	{
+		return title.getText();
+	}
 
 	
 	public void doLogin(String usernameText,String passwordText)
@@ -48,6 +56,11 @@ public class LoginPage {
 	}
 	
 	
+	public boolean verifyLogin(String expTitle)
+	{
+		
+		return getTitle().equalsIgnoreCase(expTitle);
+	}
 	
 	
 	
